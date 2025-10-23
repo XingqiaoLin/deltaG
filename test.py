@@ -190,9 +190,7 @@ print(f"⏭️ 跳过: {skipped_count}")
 print(f"🎯 处理的PDB ID数: {len(processed_pdb_ids)}")
 
 
-
-# %%
-#ESM-1V-1
+#生成ESM-1V-1特征
 import sys
 import os
 if not os.path.exists('/home/corp/xingqiao.lin/code/GeoStab/data/ddG_train'):
@@ -246,7 +244,7 @@ def find_pdb_ids(data_dir):
                     pdb_ids.add(pdb_id)
     
     return sorted(list(pdb_ids))
-
+#下载PDB文件
 def download_pdb(pdb_id, output_dir, timeout=30):
     """下载单个PDB文件"""
     pdb_id_lower = pdb_id.lower()
@@ -447,7 +445,7 @@ def main():
 # 运行主函数
 main()
 
-# %%
+ESM-1V 1-5 特征生成
 import os, torch
 from Bio import SeqIO
 from transformers import AutoTokenizer, EsmForMaskedLM
